@@ -1,0 +1,38 @@
+{
+  "name": "django-vue",
+  "version": "1.0.0",
+  "private": false,
+  "scripts": {
+    "start": "npm run migrate && npm run django | npm run livereload | npm run serve",
+    "docker": "npm run migrate && npm run django | npm run dev",
+    "django": "python manage.py runserver 0.0.0.0:8000",
+    "livereload": "python manage.py livereload",
+    "migrate": "python manage.py migrate",
+    "serve": "watch \"npm run dev\" ./stocks/src",
+    "dev": "vue-cli-service build --mode=development",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint ./vue/src --no-fix"
+  },
+  "dependencies": {
+    "axios": "^0.18.1",
+    "core-js": "^2.6.5",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.3",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.9.0",
+    "@vue/cli-plugin-eslint": "^3.9.0",
+    "@vue/cli-service": "^3.9.0",
+    "@vue/eslint-config-airbnb": "^4.0.0",
+    "@vue/test-utils": "^1.0.0-beta.20",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.1.0",
+    "vue-template-compiler": "^2.6.10",
+    "watch": "^1.0.2",
+    "webpack": "^4.38.0"
+  }
+}
